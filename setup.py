@@ -6,7 +6,7 @@ setup(
     packages=find_packages(),
     author="https://t.me/jackson_rodger",
     description="A simple Json object to Bot library built on top of a osonbot library",
-    long_description=open("README.md", "r", encoding="utf-16").read(),
+    long_description=open("README.md", "r", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/sinofarmonov323/jsonbot",
     classifiers=[

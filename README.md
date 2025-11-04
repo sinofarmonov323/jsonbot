@@ -1,4 +1,10 @@
 # JsonBot
+
+# Installation
+```shell
+pip install jsonbot
+```
+
 # Usage
 ```python
 from jsonbot import JsonBot
