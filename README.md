@@ -21,7 +21,7 @@ JsonBot("token", {
 from jsonbot import JsonBot
 
 JsonBot("token", {
-    "/start", {"response": "hello *{first_name}*", "parse_mode": "MarkdownV2", "reply_markup"},
+    "/start", {"response": "hello *{first_name}*", "parse_mode": "MarkdownV2"},
     "/help": {"response": "Hello how can i help you"}
 }).generate_code(library="osonbot", file="main.py")
 ```
