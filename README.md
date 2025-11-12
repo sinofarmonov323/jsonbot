@@ -16,7 +16,7 @@ JsonBot("token", {
     }
 }).run()
 ```
-## you can generate code to osonbot library itself (but not fully prepared)
+## you can generate code to osonbot library itself (supports only osonbot library, and can not generate fully)
 ```python
 from jsonbot import JsonBot
 
