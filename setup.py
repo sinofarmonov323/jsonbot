@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="jsonbot",
-    version="1.0.4",
+    version="1.0.6",
     packages=find_packages(),
     author="https://t.me/jackson_rodger",
     description="A simple Json object to Bot library built on top of a osonbot library",
