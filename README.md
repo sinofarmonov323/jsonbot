@@ -11,7 +11,7 @@ from jsonbot import JsonBot
 
 JsonBot("token", {
     "messages": {
-        "/start", {"response": "hello *{first_name}*", "parse_mode": "MarkdownV2", "reply_markup"},
+        "/start", {"response": "hello *{first_name}*", "parse_mode": "MarkdownV2"},
         "/help": {"response": "Hello how can i help you"}
     }
 }).run()
@@ -36,4 +36,17 @@ JsonBot("token", {
     }
 }).run()
 ```
-# Done
+
+## Send message to specific user by his/her ID
+```python
+from jsonbot import JsonBot
+
+JsonBot("token", {
+    "messages": {
+        "/start", {"response": "hello *{first_name}*", "parse_mode": "MarkdownV2"},
+        "/send": {"id": 123456789, "response": "This is a message for a specific user"}
+    }
+}).run()
+```
+
+# Done for now
