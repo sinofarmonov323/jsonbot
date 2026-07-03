@@ -13,11 +13,18 @@ class JsonBot(Bot):
 
     def setter(self):
         for text, data in self.configure['messages'].items():
-            response = data.get("response", "")
+            response = data.get("response", data.get("text", ""))
             parse_mode = data.get("parse_mode", None)
             buttons = data.get("reply_markup")
+            id = data.get("id", None)
 
-            self.when(condition=text, text=response, parse_mode=parse_mode, reply_markup=buttons)
+            if id:
+                def send_to_id(message, chat_id=id, response=response, parse_mode=parse_mode, buttons=buttons):
+                    self.send_message(chat_id=chat_id, text=response, parse_mode=parse_mode, reply_markup=buttons)
+
+                self.when(condition=text, text=send_to_id, parse_mode=parse_mode, reply_markup=buttons)
+            else:
+                self.when(condition=text, text=response, parse_mode=parse_mode, reply_markup=buttons)
         
         for text, data in self.configure.get('inline_messages', {}).items():
             response = data.get("response", "")
@@ -44,7 +51,8 @@ class JsonBot(Bot):
                 f.write(code)
             
             self.logger.info(f"Code generated in {file}")
-        if library == "pytelegrambotapi":
+        else:
+            print(f"JsonBot.generate_code doesn't support {library} yet.")
             code += "from telebot import Bot\n"
 
     def run(self):
